@@ -1,0 +1,31 @@
+{
+  "short_name": "FormationTest",
+  "name": "ProjetFormationTest - Plateforme d’apprentissage et d'exercices",
+  "description": "Une plateforme pédagogique destinée aux étudiants pour apprendre, pratiquer et tester différents projets web et logiciels.",
+  "icons": [
+    {
+      "src": "/assets/logo/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/logo/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/assets/logo/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8FAFC",
+  "theme_color": "#2563EB",
+  "lang": "fr",
+  "dir": "ltr"
+}

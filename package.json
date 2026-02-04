@@ -1,0 +1,70 @@
+{
+  "name": "ProjetFormationTest",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@headlessui/react": "^2.2.4",
+    "@heroicons/react": "^2.2.0",
+    "@hookform/resolvers": "^5.1.1",
+    "@tanstack/react-query": "^5.81.5",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "animate.css": "^4.1.1",
+    "axios": "^1.10.0",
+    "chart.js": "^4.5.0",
+    "framer-motion": "^12.23.12",
+    "js-cookie": "^3.0.5",
+    "lucide-react": "^0.522.0",
+    "react": "^19.1.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.60.0",
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-router-dom": "^7.6.2",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.25.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "zod": "^4.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/react-chartjs-2": "^2.0.2",
+    "@types/react-slick": "^0.23.13",
+    "serve": "^14.2.4",
+    "tailwindcss": "^3.4.17"
+  }
+}
