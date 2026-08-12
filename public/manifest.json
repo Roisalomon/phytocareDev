@@ -1,7 +1,7 @@
 {
-  "short_name": "FormationTest",
-  "name": "ProjetFormationTest - Plateforme d’apprentissage et d'exercices",
-  "description": "Une plateforme pédagogique destinée aux étudiants pour apprendre, pratiquer et tester différents projets web et logiciels.",
+  "short_name": "Phytocare",
+  "name": "Phytocare - Société Sanitaire.",
+  "description": "Une plateforme officiel Phytocare, Société de vente de produits Phytosanitaire et magnétosanitaire.",
   "icons": [
     {
       "src": "/assets/logo/logo-192.png",

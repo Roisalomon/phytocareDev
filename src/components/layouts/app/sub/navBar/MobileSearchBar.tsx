@@ -1,81 +1,77 @@
-import React, { useState } from "react";
-import { Search, Send, X } from "lucide-react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Send, X } from "lucide-react";
+import { useSearchBar } from "../../../../../hooks/useSearchBar";
+import { SearchSuggestions } from "./SearchSuggestions";
 
-interface MobileSeachBarProps {
-    isOpen: boolean;
-    onClose: () => void;
+interface MobileSearchBarProps {
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const MobileSeachBar: React.FC<MobileSeachBarProps> = ({ isOpen, onClose }) => {
-    const [query, setQuery] = useState("");
+export const MobileSearchBar: React.FC<MobileSearchBarProps> = ({
+  isOpen,
+  onClose,
+}) => {
+  const { query, setQuery, results, reset } = useSearchBar();
+  const navigate = useNavigate();
 
-    const suggestionsList = [
-        "UI Design",
-        "React Navigation",
-        "Tailwind Components",
-        "JavaScript Basics",
-        "Frontend Roadmap",
-    ];
+  if (!isOpen) return null;
 
-    const handleSuggestionClick = (text: string) => {
-        setQuery(text);
-    };
+  const handleClose = () => {
+    reset();
+    onClose();
+  };
 
-    const handleSubmit = () => {
-        console.log("Recherche envoyée :", query);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (results.length > 0) {
+      navigate(results[0].href);
+      reset();
+      onClose();
+    }
+  };
 
-        // ✅ Effacer le champ après l’envoi
-        setQuery("");
-    };
+  return (
+    <div
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[999] flex items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div className="bg-white w-[90%] max-w-md p-6 rounded-xl shadow-xl relative">
+        <button
+          onClick={handleClose}
+          aria-label="Fermer la recherche"
+          className="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl transition-colors"
+        >
+          <X className="w-6 h-6" aria-hidden="true" />
+        </button>
+        <h3 className="text-lg font-semibold mb-4 text-center">Rechercher</h3>
 
-    return (
-        <div>
-            <div
-                className={`fixed inset-0 h-full bg-white z-50 transform transition-all duration-300  ${isOpen ? "translate-y-0" : "translate-y-full"}`}
+        <form onSubmit={handleSubmit} className="relative">
+          <div className="flex border rounded-lg overflow-hidden">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              autoFocus
+              placeholder="Rechercher un produit ou une maladie..."
+              className="flex-1 px-4 py-3 outline-none text-sm"
+            />
+            <button
+              type="submit"
+              aria-label="Lancer la recherche"
+              className="px-4 bg-[#0C1A2A] text-white hover:bg-[#034949] transition"
             >
-                {/* ✅ Barre du haut */}
-                <div className="flex items-center gap-3 px-4 py-4 border-b border-gray-200">
-                    <Search className="w-5 h-5 text-gray-500" />
+              <Send className="w-5 h-5" aria-hidden="true" />
+            </button>
+          </div>
 
-                    <input
-                        type="text"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Search Course..."
-                        className="flex-1 outline-none text-[16px] border-0 pl-4 py-2.5 text-sm text-black outline-none placeholder:text-gray-400"
-                    />
-
-                    {/* ✅ Si query vide → bouton fermer */}
-                    {query.length === 0 ? (
-                        <button onClick={onClose}>
-                            <X className="w-6 h-6 text-gray-600" />
-                        </button>
-                    ) : (
-                        /* ✅ Si query non vide → bouton envoyer */
-                        <button onClick={handleSubmit}>
-                            <Send className="w-6 h-6 text-[#034949]" />
-                        </button>
-                    )}
-                </div>
-
-                {/* ✅ Suggestions */}
-                <div className="px-4 py-5">
-
-                    <div className="flex flex-col gap-3">
-                        {suggestionsList.map((item) => (
-                            <button
-                                key={item}
-                                onClick={() => handleSuggestionClick(item)}
-                                className="text-left text-gray-600 hover:text-[#034949] transition"
-                            >
-                                {item}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+          <SearchSuggestions results={results} query={query} onSelect={handleClose} />
+        </form>
+      </div>
+    </div>
+  );
 };
 
-export default MobileSeachBar;
+export default MobileSearchBar;

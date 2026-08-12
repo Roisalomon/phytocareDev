@@ -1,59 +1,58 @@
 import React from "react";
-import UIFooterTitle from "../../../../../ui/elements/footerUI/UIFooterTitle";
-import { Link } from "react-router-dom";
-import UIFooterSocialIcon from "../../../../../ui/elements/footerUI/UIFooterSocialIcon";
-import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
+import { socialLinks } from "../../../../../../data/footerData";
 
-const socials = [
-    { to: "/twitter", icon: <Twitter className="w-5 h-5" />, label: "Twitter" },
-    { to: "/facebook", icon: <Facebook className="w-5 h-5" />, label: "Facebook" },
-    { to: "/instagram", icon: <Instagram className="w-5 h-5" />, label: "Instagram" },
-    { to: "/linkedin", icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn" },
-];
-const contactItems = [
-    { label: "Phone:", value: "(+91) 123-456-789" },
-    { label: "Email:", value: "educeet@gmail.com" },
-    { label: "Location:", value: "North America, USA" },
-];
+export const FooterContact: React.FC = () => {
+  return (
+    <div className="space-y-4">
+      <img
+        src="/assets/img/logohorizontale.png"
+        alt="Phytocare Logo"
+        className="w-[140px] "
+      />
+      <p className="text-gray-300 text-sm leading-relaxed">
+        Votre partenaire de confiance pour des solutions phytothérapeutiques
+        et des produits de santé 100% naturels.
+      </p>
 
+      <ul className="space-y-2 text-sm text-gray-300">
+        <li className="flex items-center gap-3">
+          <i className="fa-solid fa-location-dot text-[#F7C842]" aria-hidden="true"></i>
+          <span>Cotonou, Bénin</span>
+        </li>
+        <li className="flex items-center gap-3">
+          <i className="fa-solid fa-phone text-[#F7C842]" aria-hidden="true"></i>
+          <a
+            href="https://wa.me/22997000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition"
+          >
+            +229 97 00 00 00
+          </a>
+        </li>
+        <li className="flex items-center gap-3">
+          <i className="fa-solid fa-envelope text-[#F7C842]" aria-hidden="true"></i>
+          <a href="mailto:contact@phytocare.com" className="hover:text-white transition">
+            contact@phytocare.com
+          </a>
+        </li>
+      </ul>
 
-interface FooterContactProps {
-    className?: string;
-}
-
-const FooterContact: React.FC<FooterContactProps> = ({ className }) => {
-    return (
-        <div className={className || ""}>
-            {/* ✅ Titre */}
-            <div className="mb-5">
-                <UIFooterTitle className="mb-7">Get Contact</UIFooterTitle>
-
-                {/* ✅ Contact Info */}
-                <div className="flex flex-col gap-4 text-sm text-black pl-4">
-                    {contactItems.map((item) => (
-                        <div key={item.label} className="flex items-start gap-3">
-                            <h6 className="font-semibold text-black">{item.label}</h6>
-                            <span>{item.value}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* ✅ Social Icons */}
-            <div className="flex items-center gap-4">
-                {socials.map((s) => (
-                    <UIFooterSocialIcon
-                        key={s.label}
-                        to={s.to}
-                        icon={s.icon}
-                        label={s.label}
-                    />
-                ))}
-            </div>
-
-
-        </div>
-    );
+      {/* Réseaux Sociaux */}
+      <div className="flex items-center gap-3 pt-2">
+        {socialLinks.map((social) => (
+          <a
+            key={social.label}
+            href={social.href}
+            aria-label={social.label}
+            className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#F7C842] hover:text-[#0C1A2A] text-white flex items-center justify-center transition-all duration-300"
+          >
+            <i className={social.iconClass} aria-hidden="true"></i>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default FooterContact;

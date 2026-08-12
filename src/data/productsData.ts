@@ -1,0 +1,331 @@
+import { Product, CategoryFilter } from "../types/products/product";
+
+export const categoryFilters: CategoryFilter[] = [
+  { id: "all", label: "Tout" },
+  { id: "vision", label: "Vision" },
+  { id: "immunite", label: "Immunité" },
+  { id: "articulations", label: "Articulations" },
+  { id: "tension-diabete", label: "Tension & Diabète" },
+  { id: "digestion", label: "Digestion" },
+  { id: "minceur", label: "Minceur" },
+  { id: "foie", label: "Foie" },
+  { id: "prostate", label: "Prostate" },
+  { id: "fertilite", label: "Fertilité & Menstrues" },
+  { id: "beaute-peau", label: "Beauté & Peau" },
+  { id: "circulation", label: "Circulation" },
+  { id: "bien-etre", label: "Bien-être Général" },
+];
+
+export const getProductById = (id: string): Product | undefined => {
+  return productsData.find((p) => p.id === id);
+};
+
+export const getRelatedProducts = (product: Product, limit = 4): Product[] => {
+  return productsData
+    .filter((p) => p.id !== product.id && p.category === product.category)
+    .slice(0, limit);
+};
+
+export const productsData: Product[] = [
+  {
+    id: "clear-vision",
+    name: "Clear Vision",
+    shortDesc:
+      "Complément alimentaire 100% naturel pour la santé oculaire et la mémoire.",
+    category: "vision",
+    benefits: [
+      "Aide pour les maladies oculaires",
+      "Réduit la dégénérescence maculaire",
+      "Lutte contre l'apparition de la cataracte",
+      "Améliore la vision nocturne",
+      "Protège la rétine contre les chocs extérieurs",
+      "Aide contre les rayons lumineux et solaires",
+      "Efficace pour la prévention du glaucome et des cataractes",
+    ],
+    composition:
+      "Lutéine, vitamine E naturelle, gélatine, glycérine végétale, eau purifiée.",
+    posologie: "2 fois par jour, 2 capsules à chaque prise, à croquer ou mâcher au milieu du repas.",
+    warning: "Déconseillé aux moins de 18 ans et aux femmes enceintes ou allaitantes.",
+    priceNormal: 50000,
+    pricePromo: 20000,
+    image: "/img/products/clear-vision.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+  {
+    id: "propolis",
+    name: "Propolis",
+    shortDesc:
+      "Complément alimentaire aux vertus anti-inflammatoires, antivirales et régénérantes.",
+    category: "immunite",
+    benefits: [
+      "Hydratante, antioxydante, antiseptique",
+      "Antivirale et bactéricide",
+      "Cicatrisante et anti-inflammatoire",
+      "Traite tension, diabète, asthme, problèmes de reins",
+      "Aide contre constipation, hépatites, infections",
+      "Renforce le système immunitaire",
+      "Indiquée pour les personnes âgées (régénération cellulaire)",
+    ],
+    composition: "Propolis pur, pollen d'abeille, polyéthylène glycol 400 (PEG 400), gélatine, glycérine.",
+    posologie: "Mâcher ou croquer 2 capsules matin et soir, pendant les repas.",
+    priceNormal: 60000,
+    pricePromo: 20000,
+    image: "/img/products/propolis.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+  {
+    id: "disk-pied-pyramide",
+    name: "Disque de Pied de Pyramide",
+    shortDesc:
+      "Dispositif de réflexologie plantaire à utiliser quotidiennement chez soi.",
+    category: "bien-etre",
+    benefits: [
+      "Stimule les énergies présentes dans le corps humain",
+      "Contribue au bon fonctionnement de votre corps",
+      "Aide à trouver relaxation et sommeil",
+      "Soulage et débarrasse du mal de dos",
+      "Vivifie et donne un coup de fouet à la circulation sanguine",
+      "Cible maux de tête, sinusite, insomnie, trouble de la mémoire (pointe des pieds)",
+      "Cible diabète, hypertension, hémorroïdes, constipation, indigestion (creux de la plante)",
+      "Cible maux de dos, genou, cheville, arthrose, hernie discale, sciatique (talon)",
+    ],
+    posologie:
+      "Marcher dessus 5 à 10 minutes, deux fois par jour (matin et soir), en variant la zone de pression (pointe, creux, talon) selon le trouble ciblé.",
+    warning:
+      "Ne pas excéder 5 minutes la première semaine. Déconseillé en cas de grossesse (0 à 4 mois), période menstruelle, port d'un stimulateur cardiaque ou d'un implant.",
+    priceNormal: 75000,
+    pricePromo: 30000,
+    image: "/img/products/disk-pied-pyramide.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+  {
+    id: "roll-therapy",
+    name: "Roll Therapy",
+    shortDesc:
+      "Appareil d'acupression par roulement pour soulager maux de tête, articulations et circulation.",
+    category: "bien-etre",
+    benefits: [
+      "Rétablit efficacement les personnes partiellement paralysées (AVC, hémiplégie)",
+      "Réveille les sens et redonne vigueur aux pieds",
+      "Conserve les anticorps et maintient le corps actif",
+      "Améliore la circulation sanguine et normalise la tension",
+      "Élimine le stress, les douleurs et les toxines",
+      "Favorise une respiration relaxe et le bon écoulement de la lymphe",
+    ],
+    posologie:
+      "Se tenir dessus en marchant 5 minutes le matin au réveil et le soir avant de dormir. Débutants : ne pas dépasser 5 minutes les premiers jours.",
+    warning: "Déconseillé en cas de grossesse (0 à 4 mois) ou en période menstruelle.",
+    priceNormal: 150000,
+    pricePromo: 60000,
+    image: "/img/products/roll-therapy.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+  {
+    id: "oroki",
+    name: "Oroki",
+    shortDesc:
+      "Mixture de plantes médicinales polyvalente (digestion, troubles menstruels, fertilité...).",
+    category: "digestion",
+    benefits: [
+      "Régule les troubles menstruels et règles douloureuses",
+      "Aide en cas d'infection sexuelle, stérilité, faible érection",
+      "Soulage mal d'estomac, indigestion, constipation chronique",
+      "Déparasitant (vers, ténia)",
+      "Traite dysenterie, diarrhée, hémorroïdes",
+      "Aide contre l'ulcère et les fibromes/kystes/myomes",
+      "Régule tension, diabète, mal de dos et articulations",
+    ],
+    composition:
+      "Sorghum bicolour (tige) 20%, Ocimum basilicum (feuilles) 10%, Mangifera indica (feuilles) 20%, Securidaca longepedunculata (racines) 10%, Alstonia congensis (écorces) 30%, eau purifiée q.s.",
+    posologie:
+      "Adultes : 4 cuillères à soupe par jour (2 matin, 2 soir). Enfants 7-11 ans : 1 cuillère à soupe matin et soir. Enfants -7 ans : 1 cuillère à café matin et soir.",
+    priceNormal: 30000,
+    pricePromo: 15000,
+    image: "/img/products/oroki.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+  {
+    id: "glucosamine",
+    name: "Glucosamine Chondroïtine",
+    shortDesc:
+      "Ampoules pour la régénération du cartilage et le confort articulaire.",
+    category: "articulations",
+    benefits: [
+      "Traite l'arthrose et renforce le cartilage articulaire",
+      "Améliore la fatigue et la récupération musculaire",
+      "Anti-inflammatoire, réduit les douleurs",
+      "Réduit le cholestérol",
+      "Renforce les os et prévient l'ostéoporose (lactate de calcium)",
+    ],
+    composition:
+      "Sulfate de glucosamine, sulfate de chondroïtine, collagène comestible, lactate de calcium, peptide de fourmi noire, vitamine C, anthocyanes.",
+    posologie: "1 ampoule le matin et 1 ampoule le soir, de préférence au cours des repas.",
+    warning: "Interdit aux femmes enceintes, allaitantes et aux enfants de moins de 14 ans.",
+    priceNormal: 40000,
+    pricePromo: 15000,
+    image: "/img/products/glucosamine.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+  {
+    id: "samreen-the",
+    name: "Samreen Thé",
+    shortDesc:
+      "Thé vert naturel pour la santé cardiovasculaire, hormonale et cellulaire.",
+    category: "fertilite",
+    benefits: [
+      "Prévient troubles cardiovasculaires et cérébrovasculaires",
+      "Lutte contre les tumeurs et cancers (foie, estomac, côlon, sein)",
+      "Aide contre kystes, myomes, fibromes, règles douloureuses",
+      "Traite la stérilité (homme ou femme) et les infections vaginales",
+      "Riche en minéraux, protège le système immunitaire",
+      "Diminue les graisses du ventre et protège la vue",
+    ],
+    composition: "Thé vert, flavonoïdes, acides aminés, carotène, vitamines B et C, zinc, fer, manganèse, fluor.",
+    posologie: "Infuser un poignet de thé dans une tasse d'eau chaude, à prendre matin à jeun et le soir au coucher.",
+    warning: "Interdit aux femmes enceintes, allaitantes et aux enfants de moins de 15 ans.",
+    priceNormal: 40000,
+    pricePromo: 15000,
+    image: "/img/products/samreen-the.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+  {
+    id: "omega-3",
+    name: "Oméga 3",
+    shortDesc:
+      "Supplément d'huile de saumon pour le cœur, le cerveau, les yeux et les articulations.",
+    category: "circulation",
+    benefits: [
+      "Réduit triglycérides et cholestérol LDL",
+      "Prévient les maladies cardiovasculaires (infarctus, AVC)",
+      "Améliore la fonction cognitive et la mémoire",
+      "Réduit le risque de dépression et d'anxiété",
+      "Améliore la vision, réduit le risque de cataracte et glaucome",
+      "Améliore la santé de la peau et des cheveux",
+      "Réduit l'inflammation et les douleurs articulaires",
+    ],
+    composition: "Huile de saumon, EPA, DHA, vitamine E (d-alpha tocophérol).",
+    posologie: "Mâcher ou croquer 2 capsules matin et soir, pendant les repas.",
+    priceNormal: 50000,
+    pricePromo: 20000,
+    image: "/img/products/omega-3.jpg",
+    featured: true,
+    hasFullNotice: true,
+  },
+
+  // --- Produits présents dans la grille tarifaire, notice complète non fournie ---
+  {
+    id: "black-king",
+    name: "Black King",
+    shortDesc: "Produit naturel Phytocare.", // TODO: notice à fournir
+    category: "fertilite",
+    benefits: [],
+    priceNormal: 30000,
+    pricePromo: 10000,
+    image: "/img/products/black-king.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "the-tension",
+    name: "Thé Tension",
+    shortDesc: "Thé naturel pour l'équilibre de la tension artérielle.", // TODO: notice à fournir
+    category: "tension-diabete",
+    benefits: [],
+    priceNormal: 30000,
+    pricePromo: 10000,
+    image: "/img/products/the-tension.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "the-prostate",
+    name: "Thé Prostate",
+    shortDesc: "Thé naturel pour le confort prostatique.", // TODO: notice à fournir
+    category: "prostate",
+    benefits: [],
+    priceNormal: 30000,
+    pricePromo: 10000,
+    image: "/img/products/the-prostate.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "the-minceur",
+    name: "Thé Minceur",
+    shortDesc: "Thé naturel pour accompagner la perte de poids.", // TODO: notice à fournir
+    category: "minceur",
+    benefits: [],
+    priceNormal: 30000,
+    pricePromo: 10000,
+    image: "/img/products/the-minceur.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "figado",
+    name: "Figado",
+    shortDesc: "Complément naturel pour la santé du foie.", // TODO: notice à fournir
+    category: "foie",
+    benefits: [],
+    priceNormal: 40000,
+    pricePromo: 15000,
+    image: "/img/products/figado.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "prostate-ampoule",
+    name: "Prostate",
+    shortDesc: "Complément naturel pour la santé prostatique.", // TODO: notice à fournir
+    category: "prostate",
+    benefits: [],
+    priceNormal: 50000,
+    pricePromo: 15000,
+    image: "/img/products/prostate.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "collagene",
+    name: "Collagène",
+    shortDesc: "Complément naturel pour la beauté de la peau.", // TODO: notice à fournir
+    category: "beaute-peau",
+    benefits: [],
+    priceNormal: 60000,
+    pricePromo: 20000,
+    image: "/img/products/collagene.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "the-cerveau-vision",
+    name: "Thé Cerveau et Vision",
+    shortDesc: "Thé naturel pour la mémoire et la santé oculaire.", // TODO: notice à fournir
+    category: "vision",
+    benefits: [],
+    priceNormal: 30000,
+    pricePromo: 10000,
+    image: "/img/products/the-cerveau-vision.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+  {
+    id: "bruleur-graisse",
+    name: "Brûleur de Graisse",
+    shortDesc: "Complément naturel pour accompagner la perte de poids.", // TODO: notice à fournir
+    category: "minceur",
+    benefits: [],
+    priceNormal: 40000,
+    pricePromo: 15000,
+    image: "/img/products/bruleur-graisse.jpg",
+    featured: false,
+    hasFullNotice: false,
+  },
+];

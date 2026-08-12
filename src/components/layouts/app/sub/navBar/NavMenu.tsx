@@ -1,54 +1,74 @@
-import React from "react";
-import { Link, redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { Link , redirect} from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import { MegaMenu } from "./MegaMenu";
+import { DropdownKey } from "../../../../../types/navigation";
+import {
+  productCategories,
+  diseaseCategories,
+} from "../../../../../types/navigationCategories";
 
-// ✅ Import des composants de dropdown
-import HoverHome from "./homeHover/HoverHome";
-import PageHover from "./pagesHover/PageHover";
-import CoursesHover from "./coursesHover/CoursesHover";
-import BlogHover from "./BlogHover/BlogHover";
-import ContactHover from "./ContactHover/ContactHover";
+export const NavMenu: React.FC = () => {
+  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
 
-// ✅ Menu configuré avec type
-const menuItems = [
-  { label: "Home", type: "dropdown-home", path: "/" },
-  { label: "Pages", type: "dropdown-pages", path: "/" },
-  { label: "Courses", type: "dropdown-courses", path: "/courses" },
-  { label: "Blog", type: "dropdown-blog", path: "/blog" },
-  { label: "Contact", type: "dropdown-contact", path: "/contact" },
-];
-
-
-const NavMenu: React.FC = () => {
   return (
-    <nav className="flex gap-0 font-[Times_New_Roman] text-[14px] text-black font-medium">
-      {menuItems.map((item) => {
-        switch (item.type) {
-          case "dropdown-home":
-            return <HoverHome key={item.label} />;
-          case "dropdown-pages":
-            return <PageHover key={item.label} />;
-          case "dropdown-courses":
-            return <CoursesHover key={item.label} />;
-          case "dropdown-blog":
-            return <BlogHover key={item.label} />;
-          case "dropdown-contact":
-            return <ContactHover key={item.label} />;
-          default:
-            return (
-              <Link
-                key={item.label}
-                to={item.path}
-                className="group flex items-center gap-1 px-2 py-1 rounded-sm transition-all hover:text-[#034949]"
-              >
-                {item.label}
-                <span className="arrow inline-block text-[12px] transition-transform group-hover:-rotate-180 duration-500">
-                  <ChevronDown className="w-4 h-4" />
-                </span>
-              </Link>
-            );
-        }
-      })}
+    <nav className="hidden xl:flex gap-3 font-serif text-[14px] text-black font-medium">
+      <Link
+        to="/"
+        className="flex items-center gap-1 px-3 py-1 rounded-sm transition-all hover:text-[#034949] hover:text-[1.1rem]"
+      >
+        Accueil
+      </Link>
+
+      {/* PRODUITS */}
+      <div
+        className="relative group"
+        onMouseEnter={() => setActiveDropdown("products")}
+        onMouseLeave={() => setActiveDropdown(null)}
+      >
+        <Link
+          to="/Produits"
+          className="group flex items-center gap-1 px-2 py-1 rounded-sm transition-all hover:text-[#034949] hover:text-[1.1rem]"
+        >
+          Produits
+          <span className="inline-block text-[12px] mt-1 transition-transform duration-500 group-hover:-rotate-180">
+           <ChevronDown className="w-4 h-4" />
+          </span>
+        </Link>
+        <MegaMenu categories={productCategories} isOpen={activeDropdown === "products"} />
+      </div>
+
+      {/* MALADIES */}
+      <div
+        className="relative group"
+        onMouseEnter={() => setActiveDropdown("diseases")}
+        onMouseLeave={() => setActiveDropdown(null)}
+      >
+        <Link
+          to="/Maladies"
+          className="group flex items-center gap-1 px-2 py-1 rounded-sm transition-all hover:text-[#034949] hover:text-[1.1rem]"
+        >
+          Maladies
+          <span className="inline-block text-[12px] mt-1 transition-transform duration-500 group-hover:-rotate-180">
+            <ChevronDown className="w-4 h-4" />
+          </span>
+        </Link>
+        <MegaMenu categories={diseaseCategories} isOpen={activeDropdown === "diseases"} />
+      </div>
+
+      <Link
+        to="/Propos"
+        className="flex items-center gap-1 px-2 py-1 rounded-sm transition-all hover:text-[#034949] hover:text-[1.1rem]"
+      >
+        A propos
+      </Link>
+
+      <Link
+        to="/Contact"
+        className="flex items-center gap-1 px-2 py-1 rounded-sm transition-all hover:text-[#034949] hover:text-[1.1rem]"
+      >
+        Contact
+      </Link>
     </nav>
   );
 };

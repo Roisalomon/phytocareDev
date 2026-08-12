@@ -1,29 +1,22 @@
 import React from "react";
-import FooterBranding from "./sectionFooter/FooterBranding";
-import FooterLinks from "./sectionFooter/FooterLinks";
-import FooterCompany from "./sectionFooter/FooterCompany";
-import FooterContact from "./sectionFooter/FooterContact";
-interface FooterTopProps {
-  className?: string;
-}
+import { NewsletterForm } from "./sectionFooter/NewsletterForm";
+import { FooterContact } from "./sectionFooter/FooterContact";
+import { FooterLinksGroup } from "./sectionFooter/FooterLinksGroup";
+import { ServiceClient } from "./sectionFooter/ServiceClient";
+import { quickLinks, productCategories } from "../../../../../data/footerData";
 
-const FooterTop: React.FC<FooterTopProps> = ({ className }) => {
+export const FooterTop: React.FC = () => {
   return (
-    <div
-      className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-[8%] ${className || ""}`}
-    >
-      {/* ✅ Branding + description + CTA + social */}
-      <FooterBranding />
+    <>
+      <NewsletterForm />
 
-      {/* ✅ Useful Links */}
-      <FooterLinks />
-
-      {/* ✅ Our Company */}
-      <FooterCompany />
-
-      {/* ✅ Get Contact */}
-      <FooterContact />
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+        <FooterContact />
+        <FooterLinksGroup title="Navigation" links={quickLinks} />
+        <FooterLinksGroup title="Nos Produits" links={productCategories} />
+        <ServiceClient />
+      </div>
+    </>
   );
 };
 

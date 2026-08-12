@@ -36,6 +36,7 @@ module.exports = {
         zoomInSlow: "zoomIn 5s ease-in-out infinite",
         zoomIn: "zoomIn 5s ease-in-out infinite",
         slideDown: "slideDownSlow 3s forwards",
+        animation: "fadeIn 1s ease-out forwards",
       },
       keyframes: {
         floating: {
@@ -87,21 +88,25 @@ module.exports = {
           "50%": { transform: "scale(1.1)" },
           "100%": { transform: "scale(1)" },
         },
+        fadeIn : {
+          "0%": { opacity: 0 },
+           "100%": { opacity: 1 },
+        },
 
         slideDownSlow: {
           "0%": {
-            transform: "translateY(-100%)",
+           transform: "translateY(-100%)",
             // opacity: "0",
-          },
+            },
           "100%": {
             transform: "translateY(0)",
             // opacity: "1",
-          },
-        },
+           },
+},
 
-      },
+},
     },
   },
-  plugins: [],
+plugins: [],
 }
 
