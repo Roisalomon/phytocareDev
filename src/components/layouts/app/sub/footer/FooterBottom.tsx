@@ -7,10 +7,10 @@ export const FooterBottom: React.FC = () => {
     <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
       <p>© {currentYear} Phytocare. Tous droits réservés.</p>
       <div className="flex gap-6">
-        <a href="#" className="hover:text-white transition">
+        <a href="/" className="hover:text-white transition">
           Politique de confidentialité
         </a>
-        <a href="#" className="hover:text-white transition">
+        <a href="/" className="hover:text-white transition">
           Conditions d'utilisation
         </a>
       </div>

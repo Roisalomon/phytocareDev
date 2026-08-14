@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
   Phone,
   MapPin,
   X,
-  ChevronRight,
+  // ChevronRight,
 } from "lucide-react";
 
 interface MobileMenuProps {
@@ -14,7 +14,7 @@ interface MobileMenuProps {
 }
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
-      const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+      // const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   return (
     <>
       <div

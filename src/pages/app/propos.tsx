@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AboutHero  from "./sub/propos/AboutHero";
 import AboutStory  from "./sub/propos/AboutStory";
 import AboutCommitments  from "./sub/propos/AboutCommitments";

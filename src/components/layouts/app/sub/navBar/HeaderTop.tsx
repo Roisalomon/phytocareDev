@@ -2,6 +2,7 @@ import React from "react";
 import SocialIcons from "./SocialIcons";
 import { PhoneCall, Mail } from "lucide-react";
 import UIUnderlineBoutton from "../../../../ui/elements/UIUnderlineBoutton";
+
 export const HeaderTop: React.FC = () => {
   return (
     <div className="bg-[#0C1A2A] text-white py-2 px-[8%] flex flex-col sm:flex-row justify-between items-center">

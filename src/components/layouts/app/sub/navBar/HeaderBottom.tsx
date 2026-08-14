@@ -3,7 +3,6 @@ import { NavMenu } from "./NavMenu";
 import { ApplyButton } from "./ApplyButton";
 import { HamburgerButton } from "./HamburgerButton";
 import MobileSearch from "./MobileSearch";
-import { Search, Send, X } from "lucide-react";
 import { HeaderSearchBar } from "./HeaderSearchBar";
 
 

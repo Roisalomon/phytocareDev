@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link , redirect} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { MegaMenu } from "./MegaMenu";
 import { DropdownKey } from "../../../../../types/navigation";

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 // pour le scrool top automatique 
 import ScrollToTop from "../pages/app/sub/use/ScrollToTop";

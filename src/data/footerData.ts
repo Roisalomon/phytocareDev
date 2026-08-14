@@ -1,5 +1,5 @@
 import { FooterLink, SocialLink } from "../types/footer";
-import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
+// import { Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
 
 
 export const quickLinks: FooterLink[] = [
@@ -18,8 +18,8 @@ export const productCategories: FooterLink[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { iconClass: "Facebook", href: "#", label: "Facebook" },
-  { iconClass: "Twitter", href: "#", label: "Twitter" },
-  { iconClass: "Instagram", href: "#", label: "Instagram" },
-  { iconClass: "Linkedin", href: "#", label: "LinkedIn" },
+  { iconClass: "Facebook", href: "", label: "Facebook" },
+  { iconClass: "Twitter", href: "", label: "Twitter" },
+  { iconClass: "Instagram", href: "", label: "Instagram" },
+  { iconClass: "Linkedin", href: "", label: "LinkedIn" },
 ];
