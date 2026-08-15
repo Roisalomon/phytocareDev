@@ -22,7 +22,7 @@ export const FooterContact: React.FC = () => {
         <li className="flex items-center gap-3">
           <i className="fa-solid fa-phone text-[#F7C842]" aria-hidden="true"></i>
           <a
-            href="https://wa.me/22997000000"
+            href="https://wa.me/2290166414894"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"

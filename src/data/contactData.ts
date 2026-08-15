@@ -4,8 +4,8 @@ export const contactMethods: ContactMethod[] = [
   {
     icon: "fa-phone",
     label: "Appelez-nous",
-    value: "+229 97 00 00 00",
-    href: "tel:+22997000000",
+    value: "2290166414894",
+    href: "tel:+2290166414894",
   },
   {
     icon: "fa-envelope",

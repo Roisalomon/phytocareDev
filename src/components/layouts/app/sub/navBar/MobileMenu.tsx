@@ -49,7 +49,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </Link>
           
           <a
-            href="https://wa.me/22997000000"
+            href="https://wa.me/+2290166414894"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 bg-[#F7C842] text-white text-center py-2 rounded-lg font-semibold"
