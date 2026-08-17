@@ -6,7 +6,7 @@ interface SearchSuggestionsProps {
   results: SearchResult[];
   query: string;
   onSelect: () => void;
-}
+} 
 
 export const SearchSuggestions: React.FC<SearchSuggestionsProps> = ({
   results,
