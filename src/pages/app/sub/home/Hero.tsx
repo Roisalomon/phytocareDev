@@ -35,14 +35,14 @@ export const Hero: React.FC = () => {
             </a>
 
             <a
-              href="https://wa.me/+2290166414894"
+              href="https://wa.me/22995719898"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary hover:-translate-y-1 transition-all duration-300"
             >
               <i className="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
               WhatsApp
-            </a>
+            </a> 
           </div>
 
           <div className="flex flex-wrap gap-6 pt-4">
@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-accent to-transparent rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000" />
             <img
-              src="assets/img/hero-1.png"
+              src="assets/img/heronew.jpg"
               alt="Produits Phytocare"
               className="relative z-10 rounded-[2rem] shadow-2xl border border-white/10 object-cover w-full h-[500px]"
             />

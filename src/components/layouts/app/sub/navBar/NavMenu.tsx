@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import { MegaMenu } from "./MegaMenu";
 import { DropdownKey } from "../../../../../types/navigation";
-import {
-  productCategories,
-  diseaseCategories,
-} from "../../../../../types/navigationCategories";
+// import {
+//   productCategories,
+//   diseaseCategories,
+// } from "../../../../../types/navigationCategories";
+// import { MegaMenu } from "./MegaMenu";
+
+// import { ChevronDown } from "lucide-react";
 
 export const NavMenu: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
@@ -31,11 +32,11 @@ export const NavMenu: React.FC = () => {
           className="group flex items-center gap-1 px-2 py-1 rounded-sm transition-all hover:text-[#034949] hover:text-[1.1rem]"
         >
           Produits
-          <span className="inline-block text-[12px] mt-1 transition-transform duration-500 group-hover:-rotate-180">
+          {/* <span className="inline-block text-[12px] mt-1 transition-transform duration-500 group-hover:-rotate-180">
            <ChevronDown className="w-4 h-4" />
-          </span>
+          </span> */}
         </Link>
-        <MegaMenu categories={productCategories} isOpen={activeDropdown === "products"} />
+        {/* <MegaMenu categories={productCategories} isOpen={activeDropdown === "products"} /> */}
       </div>
 
       {/* MALADIES */}
@@ -49,11 +50,11 @@ export const NavMenu: React.FC = () => {
           className="group flex items-center gap-1 px-2 py-1 rounded-sm transition-all hover:text-[#034949] hover:text-[1.1rem]"
         >
           Maladies
-          <span className="inline-block text-[12px] mt-1 transition-transform duration-500 group-hover:-rotate-180">
+          {/* <span className="inline-block text-[12px] mt-1 transition-transform duration-500 group-hover:-rotate-180">
             <ChevronDown className="w-4 h-4" />
-          </span>
+          </span> */}
         </Link>
-        <MegaMenu categories={diseaseCategories} isOpen={activeDropdown === "diseases"} />
+        {/* <MegaMenu categories={diseaseCategories} isOpen={activeDropdown === "diseases"} /> */}
       </div>
 
       <Link

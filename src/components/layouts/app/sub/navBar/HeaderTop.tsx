@@ -10,12 +10,12 @@ export const HeaderTop: React.FC = () => {
      <div className="flex items-center flex-wrap">
         <span className="mr-5 flex items-center hidden lg:flex">
           <PhoneCall className="text-[#F7C842] mr-1.5 w-5 h-5 sm:w-5 sm:h-5" />
-          <UIUnderlineBoutton>(705) 569-0123 </UIUnderlineBoutton>
+          <UIUnderlineBoutton>+229 95 71 98 98</UIUnderlineBoutton>
         </span>
         <span className="mr-5 text-[#9c9c9C] text-[14px] sm:text-[20px] hidden lg:flex">|</span>
         <span className="flex items-center ">
           <Mail className="text-[#F7C842] mr-1.5 w-5 h-5 sm:w-5 sm:h-5 " />
-          <UIUnderlineBoutton>info@intogmail.com </UIUnderlineBoutton>
+          <UIUnderlineBoutton>phytocare74@gmail.com</UIUnderlineBoutton>
         </span>
       </div>
       {/* RIGHT SOCIAL */}

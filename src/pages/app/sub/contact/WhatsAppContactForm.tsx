@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const PHONE_NUMBER = "2290166414894"; // sans le "+", format requis par l'API wa.me
+const PHONE_NUMBER = "22995719898"; // sans le "+", format requis par l'API wa.me
 
 export const WhatsAppContactForm: React.FC = () => {
   const [name, setName] = useState("");
