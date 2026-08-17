@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { DropdownKey } from "../../../../../types/navigation";
+// import { DropdownKey } from "../../../../../types/navigation";
 // import {
 //   productCategories,
 //   diseaseCategories,
@@ -10,7 +10,7 @@ import { DropdownKey } from "../../../../../types/navigation";
 // import { ChevronDown } from "lucide-react";
 
 export const NavMenu: React.FC = () => {
-  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
+  // const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
 
   return (
     <nav className="hidden xl:flex gap-3 font-serif text-[14px] text-black font-medium">
@@ -24,8 +24,8 @@ export const NavMenu: React.FC = () => {
       {/* PRODUITS */}
       <div
         className="relative group"
-        onMouseEnter={() => setActiveDropdown("products")}
-        onMouseLeave={() => setActiveDropdown(null)}
+        // onMouseEnter={() => setActiveDropdown("products")}
+        // onMouseLeave={() => setActiveDropdown(null)}
       >
         <Link
           to="/Produits"
@@ -42,8 +42,8 @@ export const NavMenu: React.FC = () => {
       {/* MALADIES */}
       <div
         className="relative group"
-        onMouseEnter={() => setActiveDropdown("diseases")}
-        onMouseLeave={() => setActiveDropdown(null)}
+        // onMouseEnter={() => setActiveDropdown("diseases")}
+        // onMouseLeave={() => setActiveDropdown(null)}
       >
         <Link
           to="/Maladies"
