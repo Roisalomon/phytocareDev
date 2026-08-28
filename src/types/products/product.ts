@@ -19,11 +19,13 @@ export interface CategoryFilter {
   label: string;
 }
 
+export type ProductBadge = "PROMO" | "NON DISPO" | "NOUVEAU"; // Vous pouvez ajouter d'autres badges si besoin
+
 export interface Product {
   id: string;
   name: string;
   shortDesc: string;
-  category: ProductCategoryId;
+  category: string;
   benefits: string[];
   composition?: string;
   posologie?: string;
@@ -32,6 +34,6 @@ export interface Product {
   pricePromo: number;
   image: string;
   featured: boolean;
-  /** true si la fiche complète (composition, bienfaits détaillés) était disponible dans le PDF fourni */
   hasFullNotice: boolean;
+  badge?: ProductBadge; // 👈 Champ optionnel pour le statut
 }

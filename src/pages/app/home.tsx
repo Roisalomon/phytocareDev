@@ -6,7 +6,7 @@ import DiseaseSearch from "./sub/home/DiseaseSearch";
 import HomeProductsSection from "./sub/home/HomeProductsSection";
 import HomeDiseaseSection  from "./sub/home/HomeDiseaseSection";
 import TestimonialsSection  from "./sub/home/TestimonialsSection";
-import TeamSection  from "./sub/home/TeamSection";
+// import TeamSection  from "./sub/home/TeamSection";
 
 
 const HomePage: React.FC = () => {
@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
       <HomeDiseaseSection />
       <DiseaseSearch />
       <TestimonialsSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
 
     </main>
   );
