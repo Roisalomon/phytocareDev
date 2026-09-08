@@ -25,9 +25,10 @@ export const AboutStory: React.FC = () => {
       </div>
 
       <div className="relative group">
-        <div className="absolute -inset-4 bg-accent/20 rounded-2xl rotate-3 group-hover:rotate-0 transition duration-500" />
+        <div className="absolute -inset-4 bg-accent/20 rounded-2xl rotate-3 group-hover:rotate-0 transition duration-50" />
         <img
-          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop"
+          // src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop"
+          src="assets/img/hero-1.png"
           alt="Laboratoire Naturel"
           loading="lazy"
           className="relative rounded-2xl shadow-2xl object-cover h-[400px] w-full"

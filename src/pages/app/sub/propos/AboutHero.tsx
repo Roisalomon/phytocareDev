@@ -9,7 +9,8 @@ export const AboutHero: React.FC = () => {
     >
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1540340061722-9293d5163008?q=80&w=2071&auto=format&fit=crop"
+          // src="https://images.unsplash.com/photo-1540340061722-9293d5163008?q=80&w=2071&auto=format&fit=crop"
+          src="assets/img/communication.jpg"
           alt="À propos Background"
           className="w-full h-full object-cover"
         />

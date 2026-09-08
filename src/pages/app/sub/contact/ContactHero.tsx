@@ -9,7 +9,8 @@ export const ContactHero: React.FC = () => {
     >
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=2070&auto=format&fit=crop"
+          // src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=2070&auto=format&fit=crop"
+          src="assets/img/contact.jpg"
           alt="Contact Background"
           className="w-full h-full object-cover"
         />

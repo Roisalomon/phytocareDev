@@ -9,7 +9,8 @@ export const ProductsHero: React.FC = () => {
     >
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.pexels.com/photos/4033636/pexels-photo-4033636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          // src="https://images.pexels.com/photos/4033636/pexels-photo-4033636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="assets/img/groupe_produit2.jpg"
           alt="Boutique Phytocare"
           className="w-full h-full object-cover"
         />

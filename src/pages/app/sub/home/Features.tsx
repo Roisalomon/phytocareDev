@@ -8,7 +8,7 @@ export const Features: React.FC = () => {
         {featuresData.map((item) => (
           <div
             key={item.title}
-            className="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors"
+            className="flex bg-red items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors"
           >
             <div className="w-12 h-12 rounded-xl bg-[#034949]/10 text-[#034949] flex items-center justify-center text-xl flex-shrink-0">
               <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
