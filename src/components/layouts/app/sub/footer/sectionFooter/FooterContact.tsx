@@ -22,12 +22,12 @@ export const FooterContact: React.FC = () => {
         <li className="flex items-center gap-3">
           <i className="fa-solid fa-phone text-[#F7C842]" aria-hidden="true"></i>
           <a
-            href="https://wa.me/22995719898"
+            href="https://wa.me/2290159747509"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
           >
-            +229 95 71 98 98
+            +229 01 59 74 75 09
           </a>
         </li>
         <li className="flex items-center gap-3">

@@ -61,7 +61,7 @@ export const PopularProducts: React.FC = () => {
                     {p.price}
                   </span>
                   <a
-                    href="https://wa.me/22995719898" 
+                    href="https://wa.me/2290159747509" 
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Commander ${p.title} sur WhatsApp`}

@@ -49,7 +49,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </Link>
           
           <a
-            href="https://wa.me/22995719898"
+            href="https://wa.me/2290159747509"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 bg-[#F7C842] text-white text-center py-2 rounded-lg font-semibold"
@@ -71,7 +71,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             </li>
             <li className="flex items-center gap-3">
               <Phone className="w-11 h-11 text-white bg-[#01380e] p-2.5 rounded-full" />
-              +229 95 71 98 98
+              +229 01 59 74 75 09
             </li>
             <li className="flex items-center gap-3">
               <MapPin className="w-11 h-11 text-white bg-[#01380e] p-2.5 rounded-full" />
